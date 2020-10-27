@@ -1,4 +1,4 @@
-function [dailyPres, hourlyPresT, projectname] = summarizeDolphinDetectionsFunction(wmd, currentfile)
+function [dailyPres, hourlyPresT, projectname] = summarizeDolphinDetectionsFunction(wmd, pathname, currentfile)
 %creates daily and hourly presence tables based off the Whistle and Moan
 %detector from Pamguard sqlite3 database. Raw detection table is also
 %exported
@@ -129,6 +129,8 @@ if nrows>=Excel_lim
         writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(projectname{1}),'.xlsx'],'Sheet',sheetname)
     startnum= startnum+Excel_lim-1;
     end
+else
+    writetable(wmd,[char(pathname),char(projectname{1}),'.xlsx'],'Sheet','RawData')
 end
 
 end
