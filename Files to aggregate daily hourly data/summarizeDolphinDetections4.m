@@ -131,7 +131,9 @@ if nrows>=Excel_lim
         end
         
         sheetname= sprintf('RawData%d',t);
-        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(projectname{1}),'.xlsx'],'Sheet',sheetname)
+        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(projectname{1}),'_', char(species),'.xlsx'],'Sheet',sheetname)
     startnum= startnum+Excel_lim-1;
     end
+else
+    writetable(wmd,[char(pathname_summary),char(projectname{1}),'_',char(species),'.xlsx'],'Sheet','RawData')
 end

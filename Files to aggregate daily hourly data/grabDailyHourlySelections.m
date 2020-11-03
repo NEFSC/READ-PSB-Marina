@@ -1,4 +1,4 @@
-function [dailyResults, hourlyResults]= grabDailyHourlySelections(Raven_table)
+function dailyResults = grabDailyHourlySelections(Raven_table)
 %Provide a Raven selection table to then have function grab all the unique
 %days and hours/day with the corresponding selection number
 
@@ -19,25 +19,5 @@ daily_ind= Raven_table.Var1(I);
 dailyResults= table(M,daily_ind);
 dailyResults.Properties.VariableNames= {'Day','SelNo'};
 I= [I; length(Raven_table.Var9)]; %to be able to get all the hours per day
-
-%hourly list
-hourlyResults= table(1,2,3);
-hourlyResults.Properties.VariableNames= {'Var1','unihours','sel_ind'};
-for i= 1:length(I)-1
-       
-    %get the unique hours/day
-    dtimes= Raven_table.Var10(I(i):I(i+1)-1);
-    selno= Raven_table.Var1(I(i):I(i+1)-1);
-    [h,~,~]= hms(dtimes);
-    [unihours,hindex]= unique(h);
-    sel_ind= selno(hindex);
-    
-    %put into hourly variable
-   dayrep0= table(repmat(dailyResults.Day(i),length(sel_ind),1),unihours,sel_ind);
-   hourlyResults= vertcat(hourlyResults,dayrep0);
-   
-end
-hourlyResults(1,:)=[];
-hourlyResults.Properties.VariableNames= {'Day','Hours','SelNo'};
 
 end
