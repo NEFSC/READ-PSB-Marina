@@ -9,6 +9,7 @@ function [dataHourly, dataDaily] = deploymentBoundaries(startArray,endArray,data
 
 %Annamaria DeAngelis
 %9/17/2020
+%modified by Allison Stokoe 11/4/2020
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if strcmp(sumtype,'hourly')
@@ -20,9 +21,7 @@ if strcmp(sumtype,'hourly')
 
     data(todelete,:)= [];
     dataHourly = data;
-    dataDaily = 0;
-else
-   %do nothing    
+    dataDaily = 0;  
 end
 
 
@@ -31,17 +30,21 @@ if strcmp(sumtype,'daily')
     startArray = char(startArray);
     endArray = char(endArray);
     
+    %make arrays of converted dates
     convertedDay = datetime(data.Day, 'InputFormat', timeFormat);
     convertedStart = datetime(startArray, 'InputFormat', 'yyyy/MM/dd'); 
-    deployed = find(convertedDay == convertedStart);
-    data(deployed,:) = [];
-    convertedDay(deployed,:) = [];
-    
     convertedEnd = datetime(endArray, 'InputFormat', 'yyyy/MM/dd');
+    
+    %find matching dates
     recovered = find(convertedDay == convertedEnd);
-    data(recovered,:) = [];
+    deployed = find(convertedDay == convertedStart);
+    
+    %delete matching dates from data
+    nrows = length(data.Day);
+    todelete = [1:deployed,recovered:nrows];
+    data(todelete,:) = [];
+    
+    %make output variables
     dataHourly = 0;
     dataDaily = data;
-else
-    %do nothing
 end

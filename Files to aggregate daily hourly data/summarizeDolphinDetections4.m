@@ -15,7 +15,7 @@ function [dailyPres, hourlyPresT, projectname] = summarizeDolphinDetections4(wmd
 %modified 8/20 for Excel row limit
 %modified 9/16/20 to include absences in the dolphin hourly table
 %modified 10/23/20 to work for either the humpback or dolphin WMD tables
-%modified 10/24/20 by Allison Stokoe to work with GUI
+%modified 11/4/20 by Allison Stokoe to work with GUI
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Flow= wmd.lowFreq;
@@ -131,9 +131,19 @@ if nrows>=Excel_lim
         end
         
         sheetname= sprintf('RawData%d',t);
-        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(projectname{1}),'_', char(species),'.xlsx'],'Sheet',sheetname)
+        projectname = char(projectname{1});
+        newfilename = strsplit(projectname,'_');
+        newfilename = {char(newfilename{1}), char(newfilename{2}), char(newfilename{3})};
+        newfilename = strjoin(newfilename, '_');
+        newfilename = newfilename(~isspace(newfilename));
+        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(newfilename),'_', char(species),'.xlsx'],'Sheet',sheetname)
     startnum= startnum+Excel_lim-1;
     end
 else
-    writetable(wmd,[char(pathname_summary),char(projectname{1}),'_',char(species),'.xlsx'],'Sheet','RawData')
+    projectname = char(projectname{1});
+    newfilename = strsplit(projectname,'_');
+    newfilename = {char(newfilename{1}), char(newfilename{2}), char(newfilename{3})};
+    newfilename = strjoin(newfilename, '_');
+    newfilename = newfilename(~isspace(newfilename));
+    writetable(wmd,[char(pathname_summary),char(newfilename),'_',char(species),'.xlsx'],'Sheet','RawData')
 end
