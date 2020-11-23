@@ -121,7 +121,11 @@ if nrows>=Excel_lim
     extrarows= nrows-Excel_lim;
     extratabs= ceil(extrarows/Excel_lim);
     startnum= 1;
-    
+    projectname = char(projectname{1});
+    newfilename = strsplit(projectname,'_');
+    newfilename = {char(newfilename{1}), char(newfilename{2}), char(newfilename{3})};
+    newfilename = strjoin(newfilename, '_');
+    newfilename = newfilename(~isspace(newfilename));
     for t= 1:extratabs+1
         w= (Excel_lim-1)*t<=nrows;
         if ~w
@@ -131,12 +135,7 @@ if nrows>=Excel_lim
         end
         
         sheetname= sprintf('RawData%d',t);
-        projectname = char(projectname{1});
-        newfilename = strsplit(projectname,'_');
-        newfilename = {char(newfilename{1}), char(newfilename{2}), char(newfilename{3})};
-        newfilename = strjoin(newfilename, '_');
-        newfilename = newfilename(~isspace(newfilename));
-        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname),char(newfilename),'_', char(species),'.xlsx'],'Sheet',sheetname)
+        writetable(wmd(row_indx(1):row_indx(2),:),[char(pathname_summary),char(newfilename),'_', char(species),'.xlsx'],'Sheet',sheetname)
     startnum= startnum+Excel_lim-1;
     end
 else
