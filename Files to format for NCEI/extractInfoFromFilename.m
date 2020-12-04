@@ -16,10 +16,12 @@ function [Sanctuary,Site,Deployment,Species]= extractInfoFromFilename(filename)
 
 %Annamaria DeAngelis
 %9/11/2020
+
+%modified by Allison Stokoe 11/18/2020
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %databank of species
-    specieslist= {'Minke','dolphins','RW','fin','sei','blue','humpback','cod','Ship'};
+    specieslist= {'Minke','dolphins','dolphin','RW','fin','sei','blue','humpback','cod','Ship'};
     
 %figure out sanctuary
 
