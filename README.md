@@ -6,9 +6,9 @@ Release Notes:
 **Base Marina 1.00.00**
 
 *Features*
-- Converting data to NCEI format [brief decscription]
-- Hourly and daily presence sheets [brief description]
+- Converting data to NCEI format: Format Data for NCEI boat has user select detector type and GUI will output correctly formatted presence tables for NCEI. Presence tables are stored in folders with sanctuary names. If a folder already exists the code will check for it and place the file there. If the folder doesn't exist then a new folder will be created. 
+- Hourly and daily presence sheets: Aggregate Data Daily and Hourly boat compiles detections for dolphin, humpback, and minke into hourly presence tables. Input is either pamguard database or raven selection table. 
 - Regression analysis [brief description]
--Tim's stuff you've done
 
-(each one of these features should be the name of the Marina boat and briefly what it can do in the base version)
+
+
