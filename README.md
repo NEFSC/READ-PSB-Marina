@@ -1,4 +1,4 @@
-For an archive of previous versions go to the Marina website: https://allison-stokoe.github.io/Marina/
+For an archive of previous versions go to the project webpage: https://allison-stokoe.github.io/Marina/
 
 **Marina 1.01.01**
 
