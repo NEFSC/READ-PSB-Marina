@@ -1,6 +1,6 @@
 **Marina 1.01.01**
 
-**compatible with Matlab 2019 and beyond**
+**compatible with Matlab 2019a and beyond**
 
 Release Notes:
 1. Does not report day/hour combinations with 0 detections in the regression tables 
