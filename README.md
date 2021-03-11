@@ -1,9 +1,11 @@
-**Marina 1.01.01**
+**Marina 1.01.02**
 
 **Compatible with Matlab 2019a and beyond**
 
 Release Notes:
-1. Does not report day/hour combinations with 0 detections in the regression tables 
+1. West coast sanctuaries now compatible with Format data for NCEI boat. 
+2. Some column name changes to files output from Format data for NCEI boat.
+3. Short user guide included for Format data for NCEI boat.  
 
 **Base Marina 1.00.00**
 
