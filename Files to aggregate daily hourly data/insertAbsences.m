@@ -29,7 +29,8 @@ switch sumType
             
             %day format is not recognized by Matlab, need to convert it to something
             %recognizable
-            data.Day= datetime(data.Day,'InputFormat','yyyy/m/d');
+            %data.Day= datetime(data.Day,'InputFormat','yyyy/m/d'); **this
+            %line was causing a bug 
             data.Day= datestr(data.Day,'yyyy/mm/dd');
             %I have the missing days, now I need to insert it back into the table with
             %0s in the other columns
