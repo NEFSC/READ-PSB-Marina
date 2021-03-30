@@ -35,7 +35,7 @@ function presTable= insertAbsencesFin(data,startdate,enddate)
             nodata= array2table(nan(nblanks,2));
             nodata2= horzcat(nodata,array2table(missingDays2));
             nodata2.Properties.VariableNames= data.Properties.VariableNames;
-            nodata2.start_date= datestr(nodata2.Matdates,'yyyy/mm/dd');
+            nodata2.start_date= datestr(nodata2.Matdates,'mm/dd/yyyy');
            
             %data.Present= str2double(data.Present);
             
