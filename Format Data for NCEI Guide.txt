@@ -5,8 +5,8 @@ Things to do before you start:
 
 For example: 
 If you are wanting to process dolphin and vessel presence tables you would take all 
-of your presence tables for dolphins and put them in one folder with no subfolders 
-(the app can sort between different sanctuaries and sites/deployments).
+of your presence tables for dolphins and put them in one folder. Do not sort these files into subfolders. Keep them all at the same level.  
+(the app is able to sort between different sanctuaries and sites/deployments).
 All of the files for vessels will need to be in a separate folder from dolphins since
 they came from a different detector. 
 **For baleen whales, LFDCS, it is fine to have all species in one folder since they are from the same detector.  
@@ -25,6 +25,6 @@ they came from a different detector.
   (i.e. SB01_03 in SB, FK03_03 in FK, & GR01_03 in GR). Inside those folders will be your actual .csv file of the formatted data. 
   The app will check if the folders already exsist before it creates them so that there are not duplicates made. This way, 
   if there is already a space where you have NCEI fomratted data stored, you will be able to add to it with no problems. 
-7. Select the save location and wait for the app to process your files and for the status lamp to return to green. 
+7. Select the save location and wait for the app to process your files. The status lamp will return to green when the process is complete. 
 8. Repeat this same process for each detector type you will be formatting files for. Make sure you select the same save location 
    every time. 
