@@ -1,14 +1,10 @@
-**Marina 1.01.02**
+**Marina 1.02.00** In progress...
 
 **Compatible with Matlab 2019a and beyond**
 
 Release Notes:
-1. West coast sanctuaries now compatible with Format data for NCEI boat. 
-2. Some column name changes to files output from Format data for NCEI boat.
-3. Short user guide included for Format data for NCEI boat.
-4. Aggregate data daily and hourly boat behavior with checkboxes was fixed
-5. Aggregate data daily and hourly boat text changed so language for choosing partial hours is more clear
-6. Bug fix for minke portion of Aggregate data daily and hourly boat 
+1. Minor changes in Aggregate Data Daily and Hourly boat to make smoother UI experience
+2. New Marina boat added! Marina users can now create spectrograms from wav files using the "Generate Spectrogram" boat under the "Other" dock 
 
 **Base Marina 1.00.00**
 
