@@ -2,5 +2,5 @@
 
 **How to use this branch:**
 1. Every new marina boat needs a folder called "files to (insert name of boat here)"
-2. create a folder locally with any functions that boat will be created from 
-3. drag folder into the file upload winodw for this branch
+2. Create a folder locally with any functions that boat will be made from
+3. Drag folder into the file upload winodw for this branch
