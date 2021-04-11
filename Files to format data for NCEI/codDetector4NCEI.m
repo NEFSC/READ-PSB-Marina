@@ -1,5 +1,5 @@
 function [dataOut, needsZeros] = codDetector4NCEI(pathname,currentfile)
-%UNTITLED Summary of this function goes here
+%
 %Created by Annamaria DeAngelis 2020 Modified by Allison Stokoe 4/11/21
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
