@@ -4,7 +4,7 @@
 
 Release Notes:
 1. Minor changes in Aggregate Data Daily and Hourly boat to make smoother UI experience
-2. New Marina boat added! Marina users can now create spectrograms from wav files using the "Generate Spectrogram" boat under the "Other" dock 
+2. New Marina boat added! Marina users can now create spectrograms from wav files using the "Generate Spectrogram" boat under the "Visualization" dock 
 
 **Base Marina 1.00.00**
 
