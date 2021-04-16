@@ -9,7 +9,7 @@ Release Notes:
 4. Deployment boundaries for aggregating data now input on main window of Aggregate Data boat. 
 5. Check boxes in Aggregate Data boat only for humpback files, dolphin and minke are fixed to hourly (for dolphin) and daily (for minke) only. 
 6. New mini-boat for creating regression tables. Try checking the check box in Aggregate Data boat to see it!
-
+7. Print any text in the command window to diaryfile.txt if the file is in your current matlab folder. Email this file along with bug reports if Matlab gives you an error when using Marina. Just type "diary"  without quotations in Matlab command window.
 
 **Base Marina 1.00.00**
 
