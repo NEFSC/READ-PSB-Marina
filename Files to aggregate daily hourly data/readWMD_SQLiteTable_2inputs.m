@@ -13,8 +13,6 @@ function wmd = readWMD_SQLiteTable_2inputs(pathname,filename,species)
 %modified 10/26/2020 to reflect renaming SQL database table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%'C:\Users\annamaria.deangelis.NMFS\Documents\SanctSound\Dolphin_PG_Detector\ToBeCopied\SanctSound_FK01_01_dolphins - Copy.sqlite3
-
 %read in SQLite table
 dbid = mksqlite(0, 'open', [pathname,filename], 'ro');
 

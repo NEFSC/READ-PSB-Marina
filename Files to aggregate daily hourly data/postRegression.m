@@ -20,6 +20,7 @@ presence_column(find_highest) = 1; %assign ones for positive detections (values 
 presence_column(find_between) = 4; %assign 4 to be manually reviewed (values greater than or equal to lowest_num and less than highest_num)
 %transpose so the cells go into column vertically 
 presence_column_transposed = transpose(presence_column);
+
 %write to excel
 xlswrite([pathname_review, currentfile_review],presence_column_transposed,'HourlyPres','F2');
 
