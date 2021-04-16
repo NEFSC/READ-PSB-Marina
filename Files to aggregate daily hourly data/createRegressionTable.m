@@ -16,8 +16,7 @@ function createRegressionTable(pathname,filename,newfilename,species,dinterest,h
 %        'SanctSound_Site_Dep_Species_RegressionHours.xlsx'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load the presence table
-PresTable = readtable([pathname,char(newfilename),'_',char(species),...
-    '.xlsx'],'Sheet','HourlyPres');
+PresTable = readtable(char(newfilename),'Sheet','HourlyPres');
 
 % need to convert dinterest and hinterest into an array of numbers for ismember 
 % to work (the values in both variable were selected from a list box in the 
@@ -57,7 +56,7 @@ hoursdays_Table = days_Table(loc_Hours,:);
 %%Filter out rows that insertAbsences.m put in (nDet needs to be > 0)
 nDetCol = hoursdays_Table(:,3);
 nDetCol = table2array(nDetCol);
-loc_Zeros = find(nDetCol > 0);
+loc_Zeros = nDetCol > 0;
 regressionTable = hoursdays_Table(loc_Zeros,:);
 
 %%%Step 4 starts here:
