@@ -6,7 +6,7 @@ function Species = getSpecies(filename)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %databank of species
-specieslist= {'Minke','dolphins','dolphin','RW','fin','sei','blue','humpback','atlanticcod','cod','Ship'};
+specieslist= {'MnandOdontocetes','Minke','dolphins','dolphin','RW','fin','sei','blue','humpback','atlanticcod','cod','Ship'};
 
 %figure out species
 filenamesplit = strsplit(filename,'_');
@@ -15,9 +15,9 @@ whichspeciesPos = ismember(filenamesplit,specieslist);
        %need to also separate by .
        splitagain= strsplit(filenamesplit{end},'.');
        whichspeciesPos= ismember(splitagain,specieslist);
-        Species = char(splitagain(whichspeciesPos));    
+       Species = char(splitagain(whichspeciesPos));    
     else
-        Species = char(filenamesplit(whichspeciesPos));
+       Species = char(filenamesplit(whichspeciesPos));
     end
 
     %to account for different spelling with species in original filename
