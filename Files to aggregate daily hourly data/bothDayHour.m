@@ -1,8 +1,8 @@
-function compPres = bothDayHour(presTable,totalDays,lastDay,Hr_first,Hr_last,HourRange,sumType)
-%UNTITLED5 Summary of this function goes here
-%   Detailed explanation goes here
+function compPres = bothDayHour(presTable,totalDays,lastDay,Hr_first,Hr_last,HourRange,StartMinute,varNames,sumType)
+%
+%Created for Marina GUI
+%Allison Stokoe 4/16/2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 switch sumType
     case 'hourly'
         %create first full day with correct num of days for hour
@@ -42,20 +42,16 @@ switch sumType
         todelete = todelete == 1;
         completeTable(todelete,:) = [];
 
-        %remove dep start boundary 
-        completeTable(1,:) = [];
+        %remove dep start boundary
+        if StartMinute > 0 %check if it is at the top of hour 
+            completeTable(1,:) = [];
+        else
+            %don't remove it
+        end
 
-        %make a row of just zeros
-        zeroCols = zeros(length(completeTable),1);
+        compPres = makeATable(completeTable,presTable,'new',varNames);
+        presTable = makeATable('',presTable,'reconstruct',varNames);
 
-        %squish everything together to get a blank presence table with all values
-        %for days and hours
-        compPres = table(completeTable(:,1),completeTable(:,2),zeroCols,...
-            zeroCols,zeroCols,'VariableNames',{'Day','Hour','nDet','MedLowFreq'...
-            ,'MedHighFreq'});
-        presTable = table(presTable(:,1),presTable(:,2),presTable(:,3),...
-            presTable(:,4),presTable(:,5), 'VariableNames', ...
-            {'Day','Hour','nDet','MedLowFreq','MedHighFreq'});
         %insert correct row #(values in addrows) of pres table to correct 
         %row # (thisloc) of compPres 
         [loca,locb] = ismember(compPres(:,[1 2]),presTable(:,[1 2]));
@@ -69,18 +65,15 @@ switch sumType
         compPres.Day = datetime(compPres.Day,'ConvertFrom','datenum');
         compPres.Day.Format = 'MM/dd/yyyy';
     case 'daily'
-        %remove dep start boundary 
-        numVars = length(presTable);
+        numVars = length(varNames);
         zeroCols = zeros(length(totalDays),1);
-        for ii = 1:numVars
+        for ii = 1:numVars-1
             totalDays = makeNewArray(totalDays,zeroCols, 'appendNewColumn');
         end
-        compPres = table(totalDays(:,1),totalDays(:,2),totalDays(:,3),...
-            totalDays(:,4),'VariableNames',{'Day','nDet',...
-            'MedLowFreq','MedHighFreq'});
-        presTable = table(presTable(:,1),presTable(:,2),presTable(:,3),...
-            presTable(:,4), 'VariableNames', ...
-            {'Day','nDet','MedLowFreq','MedHighFreq'});
+
+        compPres = makeATable(totalDays,presTable,'new',varNames);
+        presTable = makeATable('',presTable,'reconstruct',varNames);
+
         %insert correct row #(values in addrows) of pres table to correct 
         %row # (thisloc) of compPres 
         [loca,locb] = ismember(compPres(:,1),presTable(:,1));

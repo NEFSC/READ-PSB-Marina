@@ -31,8 +31,8 @@ t = timeofday(dt);
 %converts just the dates to datenum
 d = datenum(dt-t);
 
-[M,I] = unique(d); %contains all the unique dates and their indices
-uniqueDays = cellstr(datestr(M,'yyyy-mm-dd')); %just unique dates
+[uniqueDays,I] = unique(d); %contains all the unique dates and their indices
+%%% uniqueDays = cellstr(datestr(M,'mm/dd/yyyy')); %just unique dates
 
 %count the number of detections/day
 ndetDaily = zeros(length(I),1)-999;
@@ -65,7 +65,7 @@ for i = 2:length(I)
     end
     
     %compile hourly into an array
-    hourlyPres(presCounter:presCounter+u-1,1) = repmat(M(i-1),u,1);
+    hourlyPres(presCounter:presCounter+u-1,1) = repmat(uniqueDays(i-1),u,1);
     hourlyPres(presCounter:presCounter+u-1,2) = unihours;
     hourlyPres(presCounter:presCounter+u-1,3) = ndet_hr;
     hourlyPres(presCounter:presCounter+u-1,4) = medHrLow;
@@ -93,7 +93,7 @@ for u = 1:length(unihours)
     medHrHigh(u) = median(rHighvals(row));
 end
 
-hourlyPres(presCounter:presCounter+u-1,1) = repmat(M(i),u,1);
+hourlyPres(presCounter:presCounter+u-1,1) = repmat(uniqueDays(i),u,1);
 hourlyPres(presCounter:presCounter+u-1,2) = unihours;
 hourlyPres(presCounter:presCounter+u-1,3) = ndet_hr;
 hourlyPres(presCounter:presCounter+u-1,4) = medHrLow;
@@ -104,8 +104,8 @@ dailyPres = table(uniqueDays,ndetDaily,LFmed,HFmed);
 dailyPres.Properties.VariableNames = {'Day','nDet','MedLowFreq','MedHighFreq'};
 
 %table of hourly presence
-dateS = cellstr(datestr(hourlyPres(:,1),'yyyy-mm-dd'));
-hourlyPresT = table(dateS,hourlyPres(:,2),hourlyPres(:,3),hourlyPres(:,4),...
+% % % dateS = cellstr(datestr(hourlyPres(:,1),'mm/dd/yyyy'));
+hourlyPresT = table(hourlyPres(:,1),hourlyPres(:,2),hourlyPres(:,3),hourlyPres(:,4),...
     hourlyPres(:,5));
 hourlyPresT.Properties.VariableNames = {'Day','Hour','nDet','MedLowFreq','MedHighFreq'};
 
@@ -154,4 +154,5 @@ else
     newfilename = newfilename(~isspace(newfilename));
     writetable(wmd,[char(pathname_summary),char(newfilename),'_',char(species)...
         ,'.xlsx'],'Sheet','RawData')
+end
 end

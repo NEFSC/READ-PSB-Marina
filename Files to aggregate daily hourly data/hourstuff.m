@@ -1,6 +1,7 @@
 function [Hr_first,Hr_last,HourRange]= hourstuff(presTable)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%
+%Created for Marina GUI
+%Allison Stokoe 4/15/2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %find first and last hour for first and last day

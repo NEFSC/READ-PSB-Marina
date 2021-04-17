@@ -12,15 +12,13 @@ warning('off','all');
 
 data= readtable([pathname_minke,currentfile_minke],'ReadVariableNames',0);
 dailyResults = grabDailyHourlySelections(data);
-Present= cell(length(dailyResults.Day),1);
-Present= cell2table(Present);
-dailyResults= horzcat(dailyResults,Present);
-
-dailyResults= insertAbsences(dailyResults,'daily');
+dailyResults.Day = datenum(dailyResults.Day);
+% Present= cell(length(dailyResults.Day),1);
+% Present= cell2table(Present);
+% dailyResults= horzcat(dailyResults,Present);
 
 singlefile= currentfile_minke;
 p0= strfind(singlefile,'Minke');
 projectname= singlefile(1:p0-1);
 filenamenew= [pathname_minke,projectname,'Minke_cheatSheet.xlsx'];
-
 end

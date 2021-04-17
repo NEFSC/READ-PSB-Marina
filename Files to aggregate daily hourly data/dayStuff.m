@@ -1,6 +1,7 @@
 function  [lastDay,totalDays] = dayStuff(presTable)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+%
+%Created for Marina GUI
+%Allison Stokoe 4/15/2021
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %find unique days
 uniDays = unique(presTable(:,1));
