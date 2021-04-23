@@ -48,7 +48,7 @@ switch sumType
         else
             %don't remove it
         end
-
+        
         compPres = makeATable(completeTable,presTable,'new',varNames);
         presTable = makeATable('',presTable,'reconstruct',varNames);
 

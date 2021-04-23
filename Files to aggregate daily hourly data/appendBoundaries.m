@@ -89,6 +89,10 @@ switch sumType
                     Col6 = [Col6;zeros(1,1)];
                     Col7 = [Col7;zeros(1,1)];
                     Col8 = [Col8;zeros(1,1)];
+                    %replace all blank cells in Band1 and Band2 columns
+                    %with 0's
+                    Col7(isnan(Col7)) = 0;
+                    Col8(isnan(Col8)) = 0;
                 else
                     %don't add columns for presence
                 end
@@ -178,6 +182,7 @@ switch sumType
                        ,'','',varNames,sumType);
                 end
             end
+            %should this be put into otherwise??
             [lastDay,totalDays] = dayStuff(table2array(data));
             compPres = bothDayHour(table2array(data),totalDays,lastDay,'',''...
            ,'','',varNames,sumType);
