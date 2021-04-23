@@ -8,7 +8,7 @@ Release Notes:
 3. Bug fix for inserting absences according to deployment boundaries
 4. Deployment boundaries for aggregating data now input on main window of Aggregate Data boat. 
 5. Check boxes in Aggregate Data boat only for humpback files, dolphin and minke are fixed to hourly (for dolphin) and daily (for minke). 
-6. New mini-boat for creating regression tables. Try checking the check box in Aggregate Data boat to see it!
+6. New mini boat for creating regression tables. Try checking the check box in Aggregate Data boat to see it!
 
 **Base Marina 1.00.00**
 
