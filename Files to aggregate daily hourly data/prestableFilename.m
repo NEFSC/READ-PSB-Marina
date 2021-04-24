@@ -7,6 +7,12 @@ function newfilename = prestableFilename(pathname,projectname,species)
  newfilename = {char(newfilename{1}), char(newfilename{2}), char(newfilename{3})};
  newfilename = strjoin(newfilename, '_');
  newfilename = newfilename(~isspace(newfilename));
+ switch species
+     case 'dolphin'
+         species = 'dolphins';
+     otherwise
+         %species name is fine, don't change it
+ end
  newfilename = [char(pathname),char(newfilename),'_', char(species),'.xlsx'];
 end
 
