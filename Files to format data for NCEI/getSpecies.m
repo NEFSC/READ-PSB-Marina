@@ -9,18 +9,17 @@ function Species = getSpecies(filename)
 specieslist= {'MnandOdontocetes','Minke','dolphins','dolphin','RW','fin','sei','blue','humpback','atlanticcod','cod','Ship'};
 
 %figure out species
-filenamesplit = strsplit(filename,'_');
-whichspeciesPos = ismember(filenamesplit,specieslist);
-    if ~whichspeciesPos
-       %need to also separate by .
-       splitagain= strsplit(filenamesplit{end},'.');
-       whichspeciesPos= ismember(splitagain,specieslist);
-       Species = char(splitagain(whichspeciesPos));    
+for ii = 1:length(specieslist)
+    currentListItem = string(specieslist(ii));
+    if contains(lower(filename),lower(currentListItem)) == 1
+        Species = specieslist(ii);
+        break
     else
-       Species = char(filenamesplit(whichspeciesPos));
+        %keep looping through list
     end
-
+end
     %to account for different spelling with species in original filename
+    Species = char(Species);
     switch Species 
         case'dolphin'
            Species = 'dolphins';
