@@ -1,4 +1,4 @@
-**Marina 1.02.00** In progress...
+**Marina 1.02.00**
 
 **Compatible with Matlab 2019a and beyond**
 
