@@ -8,7 +8,7 @@ function [startValue,endValue] = getDepBounds(data,file)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 fileCol = data(:,1);
 fileCol = table2array(fileCol);
-loc_file = ismember(fileCol,file);
+loc_file = contains(fileCol,file);
 fileValues = data(loc_file,:);
 
 startValue = fileValues.startValues;
