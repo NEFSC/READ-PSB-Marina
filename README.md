@@ -5,7 +5,7 @@
 Release Notes:
 1. Updates made for new NEFSC Github guidelines
 
-*If user does not have Matlab, but would like to view the code, please open .m files in Notebook app or TextEdit. All .mlapp files are also exported as a .m file for this reason*
+*If user does not have Matlab, but would like to view the code, please open .m files in Notepad app or TextEdit. All .mlapp files are also exported as a .m file for this reason*
 
 **Base Marina 1.00.00**
 
