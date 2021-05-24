@@ -17,7 +17,8 @@ Release Notes:
 - Hourly and daily presence sheets: Aggregate Data Daily and Hourly boat compiles detections for dolphin, humpback, and minke into hourly presence tables. Input is either pamguard database or raven selection table. 
 - Implement regression analysis results: Aggregate Data Daily and Hourly boat has a tab where user inputs results from regression analysis. The presence tables that were created will then be modified to include numbers that indicate which hours the analyst needs to manually review.  
 
-Disclaimer: This repository is a scientific product and is not official communication of the National Oceanic and
+Disclaimer
+*This repository is a scientific product and is not official communication of the National Oceanic and
 Atmospheric Administration, or the United States Department of Commerce. All NOAA GitHub project code is
 provided on an ‘as is’ basis and the user assumes responsibility for its use. Any claims against the Department of
 Commerce or Department of Commerce bureaus stemming from the use of this GitHub project will be governed
@@ -25,5 +26,5 @@ by all applicable Federal law. Any reference to specific commercial products, pr
 mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation or
 favoring by the Department of Commerce. The Department of Commerce seal and logo, or the seal and logo of a
 DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by
-DOC or the United States Government.
+DOC or the United States Government.*
 
