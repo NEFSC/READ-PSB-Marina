@@ -1,14 +1,11 @@
-**Marina 1.02.00**
+**Marina 1.02.01**
 
 **Compatible with Matlab 2019a and beyond**
 
 Release Notes:
-1. New Marina boat added! Marina users can now create spectrograms from wav files using the "Generate Spectrogram" boat under the "Visualization" dock 
-2. Major update to Aggregate Data Daily and Hourly boat interface and a fresh look for Marina
-3. Bug fix for inserting absences according to deployment boundaries
-4. Deployment boundaries for aggregating data now input on main window of Aggregate Data boat. 
-5. Check boxes in Aggregate Data boat only for humpback files, dolphin and minke are fixed to hourly (for dolphin) and daily (for minke). 
-6. New mini boat for creating regression tables. Try checking the check box in Aggregate Data boat to see it!
+1. Updates made for new NEFSC Github guidelines
+
+*If user does not have Matlab, but would like to view the code, please open .m files in Notebook app or TextEdit. All .mlapp files are also exported as a .m file for this reason*
 
 **Base Marina 1.00.00**
 
