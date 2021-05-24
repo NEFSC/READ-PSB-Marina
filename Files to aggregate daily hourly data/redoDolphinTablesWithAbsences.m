@@ -3,7 +3,7 @@
 
 [filename,pathname]= uigetfile('*.xlsx','Select the dolphin presence tables',...
     'MultiSelect','on',...
-    'Z:\DATA_ANALYSIS\SANCTSOUND_NOAA_NAVY\Detector_output\PAMGUARD_DOLPHINS');
+    );
 
 if isa(filename,'cell')==1
     %multi
