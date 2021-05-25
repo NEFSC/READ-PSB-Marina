@@ -2,6 +2,12 @@
 
 **Compatible with Matlab 2019a and beyond**
 
+You should also include additional information relevant to the work by answering these questions: who worked on this project, when this project was created, what the project does, why the project is useful, how users can get started with the project, where users can get help with your project, and who maintains and contributes to the project.
+
+Marina was built to host the data manipulation tools commonly used by the Passive Acoustic Research Group at the Northeast Fisheries Science Center. By having it all in one app, all tools are organized and easier to use, especially for intro Matlab users.
+
+Currently the app is created and maintained by the Passive Acoustic Research Group. To get started, you can download the app and open it within Matlab. Additional help can be found
+
 Release Notes:
 1. Updates made for new NEFSC Github guidelines
 
